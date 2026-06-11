@@ -109,31 +109,6 @@
         </div>
     </header>
 
-    <!-- ================= SECCIÓN DE VIDEO LOCAL ================= -->
-    <section id="video" class="py-12 px-4 max-w-5xl mx-auto">
-        <div class="cafe-card p-6 md:p-8 bg-cafeDark text-cafeCard border-cafePrimary shadow-cafe text-center">
-            <h2 class="text-3xl font-title mb-4 text-cafeLight"><i class="fa-solid fa-video text-cafeBorder mr-2"></i> Nuestro Documental</h2>
-            <p class="text-cafeBorder mb-6">Reproduce el siguiente video para observar nuestro recorrido por el plantel y conocer el problema de primera mano.</p>
-            
-            <div class="aspect-video bg-black rounded-xl border-4 border-cafeBorder overflow-hidden relative group flex items-center justify-center">
-                
-                <!-- AQUÍ INSERTA LA URL DE TU VIDEO LOCAL -->
-                <video controls class="w-full h-full object-cover">
-                    <!-- EJEMPLO: <source src="videos/mi_video_cobaq.mp4" type="video/mp4"> -->
-                    <source src="TU_VIDEO_AQUI.mp4" type="video/mp4">
-                    Tu navegador no soporta el formato de video.
-                </video>
-
-                <!-- Mensaje Guía (Desaparece al reproducir o pasar el mouse) -->
-                <div class="absolute inset-0 bg-cafeDark/80 flex flex-col items-center justify-center text-center p-6 pointer-events-none group-hover:opacity-0 transition-opacity">
-                    <i class="fa-solid fa-play-circle text-6xl text-cafeBorder mb-4"></i>
-                    <p class="text-white font-bold text-xl font-title">Espacio para tu Video Local</p>
-                    <p class="text-cafeLight mt-2 text-sm">Cambia <code>src="TU_VIDEO_AQUI.mp4"</code> en el código</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- ================= FASE 1 ================= -->
     <section id="fase1" class="py-16 px-4 max-w-6xl mx-auto">
         <div class="text-center">
@@ -345,6 +320,22 @@
                 </div>
             </div>
 
+        </div>
+    </section>
+
+    <!-- ================= SECCIÓN DE VIDEO LOCAL ================= -->
+    <section id="video" class="py-12 px-4 max-w-5xl mx-auto">
+        <div class="cafe-card p-6 md:p-8 bg-cafeDark text-cafeCard border-cafePrimary shadow-cafe text-center">
+            <h2 class="text-3xl font-title mb-4 text-cafeLight"><i class="fa-solid fa-video text-cafeBorder mr-2"></i> Nuestro Documental</h2>
+            <p class="text-cafeBorder mb-6">Reproduce el siguiente video para observar nuestro recorrido por el plantel y conocer el problema de primera mano.</p>
+            
+            <div class="aspect-video bg-black rounded-xl border-4 border-cafeBorder overflow-hidden relative group flex items-center justify-center">
+                
+                <video controls class="w-full h-full object-cover">
+                    <source src="Video2.mp4" type="video/mp4">
+                    Tu navegador no soporta el formato de video.
+                </video>
+            </div>
         </div>
     </section>
 
