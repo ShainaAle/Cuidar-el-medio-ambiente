@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuidar el Medio Ambiente en el COBAQ</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cafeLight: '#f4ece1',   // Fondo crema claro
+                        cafeCard: '#fdf8f5',    // Fondo de tarjetas
+                        cafeBorder: '#d2b48c',  // Café claro / arena
+                        cafePrimary: '#8b5a2b', // Café medio
+                        cafeDark: '#4a3018',    // Café oscuro (textos principales)
+                        cafeAccent: '#b56a28'   // Café anaranjado (detalles)
+                    },
+                    boxShadow: {
+                        'cafe': '6px 6px 0px 0px #8b5a2b',
+                        'cafe-sm': '4px 4px 0px 0px #8b5a2b',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: #f4ece1;
+            color: #4a3018;
+            background-image: radial-gradient(#d2b48c 1px, transparent 1px);
+            background-size: 25px 25px;
+        }
+        h1, h2, h3, h4, .font-title {
+            font-family: 'Poppins', sans-serif;
+        }
+        .section-badge {
+            background-color: #8b5a2b;
+            color: white;
+            padding: 0.5rem 2rem;
+            border-radius: 9999px;
+            font-size: 1.5rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            box-shadow: 4px 4px 0px 0px #4a3018;
+            display: inline-block;
+            margin-bottom: 2rem;
+        }
+        .cafe-card {
+            background-color: #fdf8f5;
+            border: 3px solid #d2b48c;
+            border-radius: 1.5rem;
+            box-shadow: 6px 6px 0px 0px #8b5a2b;
+            transition: transform 0.2s ease;
+        }
+        .cafe-card:hover {
+            transform: translateY(-4px);
+        }
+    </style>
+</head>
+<body class="selection:bg-cafeBorder selection:text-cafeDark">
+
+    <!-- NAVBAR -->
+    <nav class="fixed top-0 w-full z-50 bg-cafeCard/90 backdrop-blur-md border-b-4 border-cafePrimary shadow-sm">
+        <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-2 text-cafeDark font-bold text-xl font-title">
+                <i class="fa-solid fa-leaf text-cafePrimary"></i>
+                <span>COBAQ Ecológico</span>
+            </div>
+            <div class="hidden md:flex gap-6 font-bold text-sm text-cafePrimary">
+                <a href="#fase1" class="hover:text-cafeDark transition-colors">Fase 1</a>
+                <a href="#fase2" class="hover:text-cafeDark transition-colors">Fase 2</a>
+                <a href="#fase3" class="hover:text-cafeDark transition-colors">Fase 3</a>
+                <a href="#fase4" class="hover:text-cafeDark transition-colors">Fase 4</a>
+                <a href="#video" class="hover:text-cafeDark transition-colors"><i class="fa-solid fa-play"></i> Video</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HEADER / PORTADA -->
+    <header class="pt-32 pb-16 px-4 text-center max-w-4xl mx-auto relative">
+        <span class="bg-cafeBorder text-cafeDark px-4 py-1 rounded-full text-sm font-bold border-2 border-cafeDark shadow-cafe-sm uppercase tracking-wide mb-4 inline-block">
+            Un compromiso con el futuro
+        </span>
+        <h1 class="text-5xl sm:text-7xl font-title font-extrabold text-cafeDark leading-tight mb-6">
+            Cuidar el medio ambiente <br>
+            <span class="text-cafeAccent">en el COBAQ</span>
+        </h1>
+        <div class="bg-cafeCard p-6 rounded-2xl border-2 border-cafeBorder shadow-cafe-sm max-w-2xl mx-auto">
+            <h3 class="font-title text-xl text-cafeDark mb-3">Integrantes del Equipo:</h3>
+            <ul class="text-cafePrimary font-bold flex flex-wrap justify-center gap-x-4 gap-y-2 text-sm sm:text-base">
+                <li><i class="fa-solid fa-seedling mr-1"></i> Rolando Rodríguez Carrillo</li>
+                <li><i class="fa-solid fa-seedling mr-1"></i> Christoper Ramirez Favela</li>
+                <li><i class="fa-solid fa-seedling mr-1"></i> Bianca Naomi Ledesma Coronel</li>
+                <li><i class="fa-solid fa-seedling mr-1"></i> Vega Luna Natalia</li>
+                <li><i class="fa-solid fa-seedling mr-1"></i> Ximena Aguilar Galván</li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- ================= SECCIÓN DE VIDEO LOCAL ================= -->
+    <section id="video" class="py-12 px-4 max-w-5xl mx-auto">
+        <div class="cafe-card p-6 md:p-8 bg-cafeDark text-cafeCard border-cafePrimary shadow-cafe text-center">
+            <h2 class="text-3xl font-title mb-4 text-cafeLight"><i class="fa-solid fa-video text-cafeBorder mr-2"></i> Nuestro Documental</h2>
+            <p class="text-cafeBorder mb-6">Reproduce el siguiente video para observar nuestro recorrido por el plantel y conocer el problema de primera mano.</p>
+            
+            <div class="aspect-video bg-black rounded-xl border-4 border-cafeBorder overflow-hidden relative group flex items-center justify-center">
+                
+                <!-- AQUÍ INSERTA LA URL DE TU VIDEO LOCAL -->
+                <video controls class="w-full h-full object-cover">
+                    <!-- EJEMPLO: <source src="videos/mi_video_cobaq.mp4" type="video/mp4"> -->
+                    <source src="TU_VIDEO_AQUI.mp4" type="video/mp4">
+                    Tu navegador no soporta el formato de video.
+                </video>
+
+                <!-- Mensaje Guía (Desaparece al reproducir o pasar el mouse) -->
+                <div class="absolute inset-0 bg-cafeDark/80 flex flex-col items-center justify-center text-center p-6 pointer-events-none group-hover:opacity-0 transition-opacity">
+                    <i class="fa-solid fa-play-circle text-6xl text-cafeBorder mb-4"></i>
+                    <p class="text-white font-bold text-xl font-title">Espacio para tu Video Local</p>
+                    <p class="text-cafeLight mt-2 text-sm">Cambia <code>src="TU_VIDEO_AQUI.mp4"</code> en el código</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= FASE 1 ================= -->
+    <section id="fase1" class="py-16 px-4 max-w-6xl mx-auto">
+        <div class="text-center">
+            <h2 class="section-badge">Fase 1: Ideación y Herramientas</h2>
+        </div>
+
+        <!-- TICCAD -->
+        <div class="cafe-card p-8 mb-12">
+            <div class="flex items-center gap-3 mb-4">
+                <div class="w-12 h-12 bg-cafeBorder rounded-full flex items-center justify-center text-cafeDark text-2xl">
+                    <i class="fa-solid fa-laptop-code"></i>
+                </div>
+                <h3 class="text-3xl font-title text-cafeDark">Herramientas: CryptPad y Riseup Pad</h3>
+            </div>
+            <p class="text-cafePrimary font-medium leading-relaxed text-lg">
+                Son plataformas de escritura colaborativa en línea enfocadas en la privacidad. Permiten que varias personas escriban al mismo tiempo en un mismo documento sin necesidad de crear cuentas y sin que se guarden datos personales. Las usamos para redactar este proyecto de manera segura y libre.
+            </p>
+        </div>
+
+        <!-- Lluvia de Ideas Grid -->
+        <h3 class="text-3xl font-title text-center text-cafeDark mb-8">Lluvia de Ideas</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            
+            <div class="bg-white border-2 border-cafeBorder p-6 rounded-2xl shadow-cafe-sm">
+                <h4 class="font-title text-xl text-cafeDark mb-3 border-b-2 border-cafeBorder pb-2"><i class="fa-solid fa-map-location-dot text-cafeAccent mr-2"></i> Lugares afectados</h4>
+                <ul class="text-sm text-cafePrimary space-y-2 font-medium">
+                    <li>• Patio central durante el receso.</li>
+                    <li>• Baños de hombres y mujeres.</li>
+                    <li>• Área de la cafetería/tiendita.</li>
+                    <li>• Pasillos entre clase y clase.</li>
+                </ul>
+            </div>
+
+            <div class="bg-white border-2 border-cafeBorder p-6 rounded-2xl shadow-cafe-sm">
+                <h4 class="font-title text-xl text-cafeDark mb-3 border-b-2 border-cafeBorder pb-2"><i class="fa-solid fa-trash text-cafeAccent mr-2"></i> Basura común</h4>
+                <ul class="text-sm text-cafePrimary space-y-2 font-medium">
+                    <li>• Envolturas de papitas, galletas y dulces.</li>
+                    <li>• Botellas de plástico y tapas.</li>
+                    <li>• Hojas de cuaderno rotas y papel.</li>
+                    <li>• Envases de jugos y yogurts.</li>
+                </ul>
+            </div>
+
+            <div class="bg-white border-2 border-cafeBorder p-6 rounded-2xl shadow-cafe-sm">
+                <h4 class="font-title text-xl text-cafeDark mb-3 border-b-2 border-cafeBorder pb-2"><i class="fa-solid fa-question-circle text-cafeAccent mr-2"></i> ¿Por qué se tira?</h4>
+                <ul class="text-sm text-cafePrimary space-y-2 font-medium">
+                    <li>• "El bote está muy lejos".</li>
+                    <li>• "Me da flojera caminar hasta allá".</li>
+                    <li>• "Alguien de intendencia lo recoge".</li>
+                    <li>• "Todos lo hacen, no pasa nada".</li>
+                </ul>
+            </div>
+
+            <div class="bg-white border-2 border-cafeBorder p-6 rounded-2xl shadow-cafe-sm lg:col-span-1 md:col-span-2">
+                <h4 class="font-title text-xl text-cafeDark mb-3 border-b-2 border-cafeBorder pb-2"><i class="fa-solid fa-triangle-exclamation text-cafeAccent mr-2"></i> Consecuencias</h4>
+                <ul class="text-sm text-cafePrimary space-y-2 font-medium">
+                    <li>• La escuela se ve sucia y da mala imagen.</li>
+                    <li>• Se tapan las coladeras cuando llueve.</li>
+                    <li>• Atrae plagas (cucarachas, moscas).</li>
+                </ul>
+            </div>
+
+            <div class="cafe-card p-6 lg:col-span-2 md:col-span-2 !bg-cafeBorder/20">
+                <h4 class="font-title text-xl text-cafeDark mb-3"><i class="fa-solid fa-lightbulb text-cafePrimary mr-2"></i> Soluciones Propuestas</h4>
+                <ul class="text-sm text-cafeDark space-y-2 font-bold">
+                    <li>✅ Poner más botes y que sean de colores para separar.</li>
+                    <li>✅ Concurso: "El salón más limpio del mes gana premio".</li>
+                    <li>✅ Campaña en redes de la escuela con el hashtag #MiEscuelaLimpia.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= FASE 2 ================= -->
+    <section id="fase2" class="py-16 px-4 max-w-6xl mx-auto border-t-2 border-dashed border-cafeBorder">
+        <div class="text-center">
+            <h2 class="section-badge !bg-cafeDark !shadow-cafe">Fase 2: Relatos y Análisis</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+            <!-- Relato 1 -->
+            <div class="cafe-card p-6">
+                <span class="text-xs font-bold bg-cafeBorder text-cafeDark px-2 py-1 rounded mb-3 inline-block">Relato 1: Motivación</span>
+                <h3 class="text-2xl font-title text-cafeDark mb-2">Campaña de alumnos</h3>
+                <p class="text-sm text-cafePrimary font-medium">
+                    En una secundaria, los alumnos organizaron la campaña "Tu basura no vuela". Pintaron botes y organizaron concursos. Redujeron 80% la basura en patios porque las ideas vinieron de ellos mismos, no como castigo.
+                </p>
+            </div>
+
+            <!-- Relato 2 -->
+            <div class="cafe-card p-6">
+                <span class="text-xs font-bold bg-cafeBorder text-cafeDark px-2 py-1 rounded mb-3 inline-block">Relato 2: Sanciones</span>
+                <h3 class="text-2xl font-title text-cafeDark mb-2">Multas por tirar basura</h3>
+                <p class="text-sm text-cafePrimary font-medium">
+                    Otra escuela impuso recoger 10 papeles del patio si te cachan tirando basura. Bajó la basura, pero el prefecto notó que los alumnos solo obedecen si los están viendo directamente.
+                </p>
+            </div>
+        </div>
+
+        <!-- Tabla Comparativa -->
+        <h3 class="text-3xl font-title text-center text-cafeDark mb-6">Tabla Comparativa de Estrategias</h3>
+        <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse bg-white border-4 border-cafeDark rounded-2xl overflow-hidden shadow-cafe">
+                <thead>
+                    <tr class="bg-cafeDark text-cafeCard font-title text-lg">
+                        <th class="p-4 border-b-2 border-cafePrimary">Aspecto</th>
+                        <th class="p-4 border-b-2 border-cafePrimary">Relato 1 (Alumnos)</th>
+                        <th class="p-4 border-b-2 border-cafePrimary">Relato 2 (Multas)</th>
+                    </tr>
+                </thead>
+                <tbody class="font-medium text-cafePrimary text-sm">
+                    <tr class="hover:bg-cafeLight transition-colors border-b border-cafeBorder">
+                        <td class="p-4 font-bold text-cafeDark">Problema</td>
+                        <td class="p-4">Patios llenos de envolturas.</td>
+                        <td class="p-4">Basura tirada en salones y pasillos.</td>
+                    </tr>
+                    <tr class="hover:bg-cafeLight transition-colors border-b border-cafeBorder bg-cafeCard">
+                        <td class="p-4 font-bold text-cafeDark">Solución Aplicada</td>
+                        <td class="p-4 font-bold text-green-700">Concurso semanal de salón limpio.</td>
+                        <td class="p-4 font-bold text-red-700">Regla: si tiras basura, recoges 10 papeles.</td>
+                    </tr>
+                    <tr class="hover:bg-cafeLight transition-colors border-b border-cafeBorder">
+                        <td class="p-4 font-bold text-cafeDark">Resultado Final</td>
+                        <td class="p-4">Menos basura y alumnos motivados.</td>
+                        <td class="p-4">Menos basura, pero solo obedecen por obligación.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- ================= FASE 3 ================= -->
+    <section id="fase3" class="py-16 px-4 max-w-6xl mx-auto border-t-2 border-dashed border-cafeBorder">
+        <div class="text-center">
+            <h2 class="section-badge !bg-cafeAccent">Fase 3: Encuestas y Resultados</h2>
+        </div>
+
+        <div class="cafe-card p-8 mb-12 text-center relative overflow-hidden bg-cafeDark text-cafeCard border-cafeDark">
+            <i class="fa-solid fa-bullhorn absolute -right-4 -top-4 text-8xl text-cafePrimary opacity-30"></i>
+            <h3 class="text-3xl font-title mb-2">Dato Impactante</h3>
+            <p class="text-2xl font-bold text-cafeBorder mb-4">
+                6 de cada 10 alumnos ven basura tirada <span class="bg-cafePrimary text-white px-2 rounded">TODOS LOS DÍAS</span>.
+            </p>
+            <p class="font-medium max-w-2xl mx-auto">
+                Este dato de nuestra encuesta revela una realidad alarmante: la mayoría de los estudiantes conviven diariamente con la contaminación en su propio espacio educativo, normalizando el problema.
+            </p>
+        </div>
+
+        <h3 class="text-3xl font-title text-center text-cafeDark mb-8">Gráficas del Sondeo</h3>
+        
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- Grafica 1 -->
+            <div class="cafe-card p-6 bg-white">
+                <h4 class="font-title text-xl text-center text-cafeDark mb-4">¿Qué Basura Hay Más?</h4>
+                <div class="relative h-48 w-full"><canvas id="chartBasura"></canvas></div>
+                <p class="text-xs text-center text-cafePrimary font-bold mt-4">Las envolturas de snacks dominan el entorno.</p>
+            </div>
+
+            <!-- Grafica 2 -->
+            <div class="cafe-card p-6 bg-white">
+                <h4 class="font-title text-xl text-center text-cafeDark mb-4">¿Por Qué Tiran Basura?</h4>
+                <div class="relative h-48 w-full"><canvas id="chartRazones"></canvas></div>
+                <p class="text-xs text-center text-cafePrimary font-bold mt-4">La lejanía de los botes es la principal barrera.</p>
+            </div>
+
+            <!-- Grafica 3 -->
+            <div class="cafe-card p-6 bg-white">
+                <h4 class="font-title text-xl text-center text-cafeDark mb-4">Actitud ante la basura</h4>
+                <div class="relative h-48 w-full"><canvas id="chartActitud"></canvas></div>
+                <p class="text-xs text-center text-cafePrimary font-bold mt-4">El 60% la ignora porque "no es suya".</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= FASE 4 / CONCLUSION ================= -->
+    <section id="fase4" class="py-16 px-4 max-w-6xl mx-auto border-t-2 border-dashed border-cafeBorder mb-12">
+        <div class="text-center">
+            <h2 class="section-badge">Fase 4: Conclusiones y Plan de Acción</h2>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            
+            <!-- Grafica Voluntariado -->
+            <div class="lg:col-span-5 cafe-card p-8 bg-white text-center">
+                <h3 class="font-title text-2xl text-cafeDark mb-6">¿Harías voluntariado para limpiar?</h3>
+                <div class="relative h-64 w-full"><canvas id="chartVoluntariado"></canvas></div>
+                <div class="mt-6 space-y-2 text-sm font-bold text-cafePrimary">
+                    <p><span class="text-[#8b5a2b]">Sí (90%):</span> Dispuestos a participar.</p>
+                    <p><span class="text-[#d2b48c]">Tal vez (10%):</span> Dependiendo de la actividad.</p>
+                    <p><span class="text-[#4a3018]">No (0%):</span> Excelente disposición general.</p>
+                </div>
+            </div>
+
+            <!-- Conclusion Text -->
+            <div class="lg:col-span-7 space-y-6">
+                <div class="cafe-card bg-cafeBorder text-cafeDark p-8 relative overflow-hidden border-cafePrimary">
+                    <i class="fa-solid fa-recycle absolute -right-10 -bottom-10 text-9xl text-white opacity-20"></i>
+                    <h3 class="text-3xl font-title mb-4 relative z-10 text-cafeDark">Conclusión del Proyecto</h3>
+                    <p class="font-medium text-lg leading-relaxed relative z-10 mb-4">
+                        El problema principal no es que desconozcamos sobre reciclaje o limpieza, es que la <strong>apatía</strong> y la <strong>falta de infraestructura (botes)</strong> dificultan el proceso.
+                    </p>
+                    <p class="font-medium text-lg leading-relaxed relative z-10">
+                        La excelente noticia es que <strong>9 de cada 10 estudiantes</strong> están dispuestos a involucrarse si la escuela provee los recursos necesarios y organiza dinámicas motivadoras (como los concursos propuestos en la Fase 1 y 2). El cambio es completamente posible.
+                    </p>
+                </div>
+                
+                <div class="bg-cafeDark text-cafeCard border-2 border-cafePrimary rounded-full py-4 px-8 text-center shadow-cafe-sm">
+                    <h4 class="font-title text-xl">#MiEscuelaLimpia 🌱 Juntos por un COBAQ mejor.</h4>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-cafeDark py-8 text-center text-cafeBorder font-medium border-t-8 border-cafePrimary">
+        <p class="font-title text-2xl mb-2 text-white">Proyecto Ecológico COBAQ</p>
+        <p class="text-sm opacity-80">Rolando, Christoper, Bianca, Natalia, Ximena</p>
+    </footer>
+
+    <!-- CHART.JS INICIALIZACIÓN (Con Paleta Café) -->
+    <script>
+        window.onload = function() {
+            Chart.defaults.font.family = "'Lato', sans-serif";
+            Chart.defaults.font.weight = 'bold';
+            Chart.defaults.color = '#4a3018';
+
+            // 1. ¿Qué basura hay más? (Doughnut)
+            const ctxBasura = document.getElementById('chartBasura').getContext('2d');
+            new Chart(ctxBasura, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Envolturas (50%)', 'Botellas (30%)', 'Papel (20%)'],
+                    datasets: [{
+                        data: [50, 30, 20],
+                        backgroundColor: ['#8b5a2b', '#b56a28', '#d2b48c'], // Tonos café
+                        borderWidth: 2,
+                        borderColor: '#ffffff'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    cutout: '60%',
+                    plugins: { legend: { position: 'bottom' } }
+                }
+            });
+
+            // 2. ¿Por qué tiran basura? (Barra)
+            const ctxRazones = document.getElementById('chartRazones').getContext('2d');
+            new Chart(ctxRazones, {
+                type: 'bar',
+                data: {
+                    labels: ['No hay botes', 'Flojera', 'Otros'],
+                    datasets: [{
+                        data: [40, 30, 30],
+                        backgroundColor: ['#4a3018', '#8b5a2b', '#d2b48c'],
+                        borderRadius: 6,
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    scales: { y: { beginAtZero: true, max: 50, grid: { display: false } }, x: { grid: { display: false } } }
+                }
+            });
+
+            // 3. Actitud ante la basura (Pie)
+            const ctxActitud = document.getElementById('chartActitud').getContext('2d');
+            new Chart(ctxActitud, {
+                type: 'pie',
+                data: {
+                    labels: ['La ignora (60%)', 'La recoge (20%)', 'Si los ven (20%)'],
+                    datasets: [{
+                        data: [60, 20, 20],
+                        backgroundColor: ['#b56a28', '#4a3018', '#d2b48c'],
+                        borderWidth: 2,
+                        borderColor: '#ffffff'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { position: 'bottom' } }
+                }
+            });
+
+            // 4. ¿Harías voluntariado? (Barra horizontal para dar variedad)
+            const ctxVoluntariado = document.getElementById('chartVoluntariado').getContext('2d');
+            new Chart(ctxVoluntariado, {
+                type: 'bar',
+                data: {
+                    labels: ['Sí participaría', 'Tal vez', 'No'],
+                    datasets: [{
+                        data: [90, 10, 0.5], // 0.5 para que se vea una ligera marca en "no"
+                        backgroundColor: [
+                            '#8b5a2b', // Sí (Café primario)
+                            '#d2b48c', // Tal vez (Café arena)
+                            '#4a3018'  // No (Café oscuro)
+                        ],
+                        borderRadius: 6,
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    indexAxis: 'y', // Barra horizontal
+                    plugins: { legend: { display: false } },
+                    scales: { 
+                        x: { 
+                            beginAtZero: true, 
+                            max: 100,
+                            grid: { color: '#e5e7eb' }
+                        }, 
+                        y: { 
+                            grid: { display: false }
+                        } 
+                    }
+                }
+            });
+        };
+    </script>
+</body>
+</html>
